@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+	<persistence-unit name="taggable-persistence-unit"
+	                  transaction-type="JTA">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- If you are running in a production environment, add a managed data 
+		     source, this example data source is just for development and testing! -->
+<!-- 			<jta-data-source>jdbc:/PostgresDS</jta-data-source> -->
+		<jta-data-source>java:/PostgresDS</jta-data-source>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+<!-- 		<jar-file>lib/ruu.io-app.taggable.common-0.0.1-SNAPSHOT.jar</jar-file> -->
+		<properties>
+		<!-- properties for hibernate -->
+				<property name="hibernate.archive.autodetection" value="class, hbm" />
+
+				<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+<!-- 				<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/> -->
+
+<!-- 				<property name="hibernate.hbm2ddl.auto" value="create" /> -->
+				<property name="hibernate.hbm2ddl.auto" value="update" />
+<!-- 				<property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+
+				<property name="hibernate.show_sql" value="true" />
+				<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
