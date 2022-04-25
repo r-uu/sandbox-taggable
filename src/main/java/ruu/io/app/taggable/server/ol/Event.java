@@ -3,11 +3,12 @@ package ruu.io.app.taggable.server.ol;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-//@Entity
+@Entity
 //@Table(name = "Event")
 //@NamedQuery(name = "Event.findAll", query = "SELECT e FROM Event e")
 //@NamedQuery(name = "Event.findEvent", query = "SELECT e FROM Event e WHERE "

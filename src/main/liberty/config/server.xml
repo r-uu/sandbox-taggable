@@ -10,6 +10,7 @@
 		<feature>jsonb-2.0</feature>
 		<feature>persistence-3.0</feature>
 		<feature>persistenceContainer-3.0</feature>
+		<feature>restConnector-2.0</feature>
 		<feature>restfulWS-3.0</feature>
 		<feature>mpConfig-3.0</feature>
 		<feature>mpOpenAPI-3.0</feature>
@@ -23,10 +24,10 @@
 	          defaultValue="9080" />
 	<variable name="default.https.port"
 	          defaultValue="9443" />
-	<variable name="jar.folder.hibernate"
-	          value="${user.home}/.m2/repository/org/hibernate/hibernate-core-jakarta/5.5.6.Final" />
-	<variable name="jar.file.hibernate"
-	          value="hibernate-core-jakarta-5.5.6.Final.jar" />
+<!-- 	<variable name="jar.folder.hibernate" -->
+<!-- 	          value="${user.home}/.m2/repository/org/hibernate/hibernate-core-jakarta/5.5.6.Final" /> -->
+<!-- 	<variable name="jar.file.hibernate" -->
+<!-- 	          value="hibernate-core-jakarta-5.5.6.Final.jar" /> -->
 
 	<!-- This template enables security. To get the full use of all the capabilities, 
 	     a keystore and user registry are required. -->
@@ -44,11 +45,11 @@
 	    encode and add it in the password attribute of the user element. Then uncomment 
 	    the user element. -->
 	<basicRegistry id="basic" realm="BasicRealm">
-<!-- 		<user name="admin" password="admin" /> -->
+		<user name="admin" password="admin" />
 	</basicRegistry>
 
 	<administrator-role>
-<!-- 		<user>admin</user> -->
+		<user>admin</user>
 	</administrator-role>
 
 	<!-- <remoteFileAccess> -->
@@ -71,7 +72,7 @@
 	              host="*" />
 
 	<dataSource id="PostgresDS"
-	            jndiName="jdbc:/PostgresDS"
+	            jndiName="jdbc/PostgresDS"
 	            jdbcDriverRef="postgresql-driver"
 	            type="javax.sql.ConnectionPoolDataSource"
 	            transactional="true">
