@@ -49,6 +49,16 @@
 					<groupId>io.openliberty.tools</groupId>
 					<artifactId>liberty-maven-plugin</artifactId>
 					<version>3.5.1</version>
+					<configuration>
+						<copyDependencies>
+							<location>${project.build.directory}/liberty/wlp/usr/shared/resources</location>
+							<dependency>
+								<groupId>org.postgresql</groupId>
+								<artifactId>postgresql</artifactId>
+								<version>42.3.4</version>
+							</dependency>
+						</copyDependencies>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>

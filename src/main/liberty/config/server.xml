@@ -4,16 +4,16 @@
 	<!-- enable features -->
 
 	<featureManager>
-<!-- 		<feature>jakartaee-9.1</feature> -->
-<!-- 		<feature>microProfile-5.0</feature> -->
-
-		<feature>restfulWS-3.0</feature>
+		<feature>bells-1.0</feature>
+		<feature>cdi-3.0</feature>
 		<feature>jsonp-2.0</feature>
 		<feature>jsonb-2.0</feature>
-		<feature>cdi-3.0</feature>
+		<feature>persistence-3.0</feature>
+		<feature>persistenceContainer-3.0</feature>
+		<feature>restfulWS-3.0</feature>
 		<feature>mpConfig-3.0</feature>
-		<feature>mpRestClient-3.0</feature>
 		<feature>mpOpenAPI-3.0</feature>
+		<feature>mpRestClient-3.0</feature>
 
 <!-- 		<feature>adminCenter-1.0</feature> -->
 	</featureManager>
@@ -23,16 +23,10 @@
 	          defaultValue="9080" />
 	<variable name="default.https.port"
 	          defaultValue="9443" />
-	<variable name="driver.folder.postgres"
-	          value="${user.home}/.m2/repository/org/postgresql/postgresql/42.2.23" />
-	<variable name="driver.file.postgres"
-	          value="postgresql-42.2.23.jar" />
 	<variable name="jar.folder.hibernate"
 	          value="${user.home}/.m2/repository/org/hibernate/hibernate-core-jakarta/5.5.6.Final" />
 	<variable name="jar.file.hibernate"
 	          value="hibernate-core-jakarta-5.5.6.Final.jar" />
-	<variable name="server.config.dir"
-	          value="${user.home}/develop/git/ruu.io/app/taggable/server/ol/src/main/liberty/config" />
 
 	<!-- This template enables security. To get the full use of all the capabilities, 
 	     a keystore and user registry are required. -->
@@ -96,8 +90,8 @@
 
 	<library id="postgresql-driver-library">
 		<fileset id="PostgreSQLFileset"
-		         dir="${driver.folder.postgres}"
-		         includes="${driver.file.postgres}" />
+		         dir="${shared.resource.dir}/"
+		         includes="postgresql-42.3.4.jar" />
 	</library>
 
 	<library id="hibernate-library">
