@@ -6,13 +6,24 @@
 
 	<persistence-unit name="taggable-persistence-unit"
 	                  transaction-type="JTA">
+
 		<jta-data-source>jdbc/PostgresDS</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
 		<properties>
+
+			<!-- properties as defined in specification -->
+<!-- 			<property name="jakarta.persistence.schema-generation.database.action" value="none" /> -->
+<!-- 			<property name="jakarta.persistence.schema-generation.database.action" value="create" /> -->
+			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+<!-- 			<property name="jakarta.persistence.schema-generation.database.action" value="drop" /> -->
+
 			<!-- properties for eclipselink -->
-			<property name="eclipselink.ddl-generation"             value="create-tables" />
-			<property name="eclipselink.ddl-generation.output-mode" value="both" />
-			<property name="eclipselink.logging.level"              value="all" />
+<!-- 			<property name="eclipselink.ddl-generation"             value="create-tables" /> -->
+<!-- 			<property name="eclipselink.ddl-generation.output-mode" value="both" /> -->
+			<property name="eclipselink.logging.level"              value="info" />
+			<property name="eclipselink.logging.parameters"         value="true" />
+
 		</properties>
 	</persistence-unit>
 
