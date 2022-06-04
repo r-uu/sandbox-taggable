@@ -1,4 +1,4 @@
-package ruu.io.app.taggable.server.ol;
+package ruu.io.app.taggable.server.openliberty;
 
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 

@@ -1,4 +1,4 @@
-package ruu.io.app.taggable.server.ol;
+package ruu.io.app.taggable.server.openliberty;
 
 import java.time.LocalDate;
 import java.util.List;

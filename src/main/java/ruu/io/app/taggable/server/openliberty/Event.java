@@ -1,4 +1,4 @@
-package ruu.io.app.taggable.server.ol;
+package ruu.io.app.taggable.server.openliberty;
 
 import java.io.Serializable;
 
@@ -7,12 +7,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 @Entity
 //@Table(name = "Event")
-//@NamedQuery(name = "Event.findAll", query = "SELECT e FROM Event e")
-//@NamedQuery(name = "Event.findEvent", query = "SELECT e FROM Event e WHERE "
-//    + "e.name = :name AND e.location = :location AND e.time = :time")
+@NamedQuery(name = "Event.findAll", query = "SELECT e FROM Event e")
+@NamedQuery(name = "Event.findEvent", query = "SELECT e FROM Event e WHERE "
+    + "e.name = :name AND e.location = :location AND e.time = :time")
 public class Event implements Serializable
 {
 	private static final long serialVersionUID = 1L;
