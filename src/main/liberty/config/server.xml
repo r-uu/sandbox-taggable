@@ -4,7 +4,10 @@
 	<!-- enable features -->
 
 	<featureManager>
-		<feature>bells-1.0</feature>
+<!-- 		<feature>jakartaee-9.1</feature> -->
+<!-- 		<feature>microProfile-5.0</feature> -->
+
+<!-- 		<feature>bells-1.0</feature> -->
 		<feature>cdi-3.0</feature>
 		<feature>jsonp-2.0</feature>
 		<feature>jsonb-2.0</feature>
@@ -20,10 +23,9 @@
 	</featureManager>
 
 	<!-- define variables and their values -->
-	<variable name="default.http.port"
-	          defaultValue="9080" />
-	<variable name="default.https.port"
-	          defaultValue="9443" />
+	<variable name="default.http.port"  defaultValue="9080" />
+	<variable name="default.https.port" defaultValue="9443" />
+	<variable name="defaultHostName"           value="localhost" />
 <!-- 	<variable name="jar.folder.hibernate" -->
 <!-- 	          value="${user.home}/.m2/repository/org/hibernate/hibernate-core-jakarta/5.5.6.Final" /> -->
 <!-- 	<variable name="jar.file.hibernate" -->
@@ -76,7 +78,6 @@
 	            jdbcDriverRef="postgresql-driver"
 	            type="javax.sql.ConnectionPoolDataSource"
 	            transactional="true">
-
 		<properties serverName="localhost"
 		            portNumber="5432"
 		            databaseName="taggable"
@@ -95,12 +96,12 @@
 		         includes="postgresql-42.3.4.jar" />
 	</library>
 
-	<library id="hibernate-library">
-		<fileset dir="${jar.folder.hibernate}"
-		         includes="${jar.file.hibernate}" />
-	</library>
+<!-- 	<library id="hibernate-library"> -->
+<!-- 		<fileset dir="${jar.folder.hibernate}" -->
+<!-- 		         includes="${jar.file.hibernate}" /> -->
+<!-- 	</library> -->
 
-	<bell libraryRef="hibernate-library" />
+<!-- 	<bell libraryRef="hibernate-library" /> -->
 
 	<!-- Automatically expand WAR files and EAR files -->
 	<applicationManager autoExpand="true" />
